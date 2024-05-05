@@ -1,0 +1,19 @@
+.App{
+    display: flex;
+}
+.Users, .Comments{
+    width: 50%;
+}
+.user{
+    display: flex;
+    flex-direction: column;
+}
+.user img{
+    width: 200px;
+}
+.user p, h2{
+    margin: 5px;
+}
+.user img{
+    margin: 10px 0;
+}
