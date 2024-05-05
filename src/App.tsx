@@ -6,7 +6,7 @@ import UsersComponent from "./Components/Users/UsersComponent";
 const App = () => {
     return (
         <div>
-            <UsersComponent users={}/>
+            <UsersComponent/>
         </div>
     );
 };
