@@ -1,12 +1,12 @@
 import axios, {AxiosResponse} from 'axios';
-import {PostModel} from "../Models/PostModel";
+import {UserModel} from "../Models/UserModel";
 
 let axiosInstance = axios.create({
     baseURL: 'https://dummyjson.com',
     headers: {'content-type': 'application/json; charset=UTF-8'}
 });
 
-const getAllUsers = (): Promise<AxiosResponse<PostModel[]>> => {
+const getAllUsers = (): Promise<AxiosResponse<UserModel[]>> => {
     return axiosInstance.get('/users')
 }
 
