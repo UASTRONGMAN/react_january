@@ -1,7 +1,8 @@
 import React, {FC, useEffect, useState} from 'react';
-import UserComponent from "../User/UserComponent";
 import {IUserModel} from "../../Models/IUserModel";
 import {getAllUsers} from "../../services/jph.api.service";
+import UserComponent from "../User/UserComponent";
+
 
 type IPropsType = {lift?: (userId:number) => void}
 
