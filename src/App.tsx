@@ -1,15 +1,18 @@
-import React from 'react';
-import './App.css';
-import UsersComponent from "./components/Users/UsersComponent";
-import {TodoModel} from "./models/TodoModel/TodoModel";
+import React, {useState} from 'react';
+import UsersComponent from "./components/UsersComponent/UsersComponent";
+import TodosComponent from "./components/TodosComponent/TodosComponent";
 
 const App = () => {
-    const getAllTodosFromEachUser = (todos: TodoModel[]) => {
-        console.log(todos)
+    const [userId, setUserId] = useState<number>(0)
+    const stateLifting = (id:number) => {
+        setUserId(id)
     }
     return (
         <div>
-            <UsersComponent getAllTodosFromEachUser={getAllTodosFromEachUser}/>
+            <UsersComponent stateLifting={stateLifting}/>
+            {
+                !!userId && <TodosComponent userId={userId}/>
+            }
         </div>
     );
 };
