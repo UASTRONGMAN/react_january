@@ -1,15 +1,12 @@
-import React, {FC, useEffect, useState} from 'react';
-import {apiservices} from "../services/api.service";
+import React, {FC} from 'react';
 import {ICommentModel} from "../models/ICommentModel";
 import CommentComponent from "./CommentComponent";
 
-const CommentsComponent: FC = () => {
+interface IProps{
+    comments: ICommentModel[]
+}
 
-    const [comments, setComments] = useState<ICommentModel[]>([])
-
-    useEffect(() => {
-        apiservices.getAllComments().then(value => setComments(value.data))
-    }, []);
+const CommentsComponent: FC<IProps> = ({comments}) => {
 
     return (
         <div>
