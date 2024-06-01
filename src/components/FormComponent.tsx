@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useForm} from "react-hook-form";
 import {AuthDataModel} from "../models/AuthDataModel";
+import {authService} from "../services/api.service";
 
 const FormComponent = () => {
     const {
@@ -26,6 +27,7 @@ const FormComponent = () => {
             <form onSubmit={handleSubmit(authenticate)}>
                 <input type="text" {...register('username')}/>
                 <input type="text" {...register('password')}/>
+                <button>send</button>
             </form>
         </div>
     );
