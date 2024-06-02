@@ -3,13 +3,15 @@ import {ICarWithAuthModel} from "../models/ICarWithAuthModel";
 import CarComponent from "./CarComponent";
 
 interface IProps{
-    car:ICarWithAuthModel
+    cars:ICarWithAuthModel[]
 }
 
-const CarsComponent: FC<IProps> = ({car}) => {
+const CarsComponent: FC<IProps> = ({cars}) => {
     return (
         <div>
-            <CarComponent car={car}/>
+            {
+                cars.map(car => <CarComponent key={car.id} car={car}/>)
+            }
         </div>
     );
 };

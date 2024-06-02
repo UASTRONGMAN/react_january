@@ -17,9 +17,7 @@ const CarsPage = () => {
 
     return (
         <div>
-            {
-                cars.map(car => <CarsComponent car={car}/>)
-            }
+            <CarsComponent cars={cars}/>)
         </div>
     );
 };
