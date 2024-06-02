@@ -8,7 +8,11 @@ const CarsPage = () => {
     const [cars, setCars] = useState<ICarWithAuthModel[]>([])
 
     useEffect(() => {
-        carService.getAllCars().then(value => setCars(value.items))
+        carService.getAllCars().then(value => {
+            if (value) {
+                setCars(value.items)
+            }
+        })
     }, []);
 
     return (
