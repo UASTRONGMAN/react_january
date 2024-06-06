@@ -1,13 +1,12 @@
-import React, {useContext} from 'react';
-import {ContextProvider} from "../context/ContextProvider";
+import React from 'react';
+import PostsComponent from "../components/PostsComponent";
 
 const PostsPage = () => {
 
-    const context = useContext(ContextProvider);
 
     return (
         <div>
-
+            <PostsComponent/>
         </div>
     );
 };

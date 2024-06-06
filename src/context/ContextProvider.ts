@@ -1,6 +1,7 @@
-import {createContext} from "react";
+import {createContext, useContext} from "react";
 import {IUserModel} from "../models/IUserModel";
 import {IPostModel} from "../models/IPostModel";
+import {ICommentModel} from "../models/ICommentModel";
 
 type StoreType = {
     userStore:{
@@ -8,6 +9,9 @@ type StoreType = {
     },
     postStore:{
         allPosts:IPostModel[]
+    },
+    commentStore:{
+        allComments:ICommentModel[]
     }
 };
 
@@ -17,7 +21,12 @@ export const defaultValue = {
     },
     postStore:{
         allPosts:[]
+    },
+    commentStore:{
+        allComments:[]
     }
 };
 
 export const ContextProvider = createContext<StoreType>(defaultValue)
+
+export const useContextProvider = ():StoreType => {return useContext(ContextProvider)}
